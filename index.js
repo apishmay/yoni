@@ -1,4 +1,5 @@
 let linebot = require('linebot');
+var express = require('express');
 
 // 初始化 line bot 需要的資訊，在 Heroku 上的設定的 Config Vars，可參考 Step2
 let bot = linebot({
