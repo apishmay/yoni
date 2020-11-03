@@ -16,7 +16,8 @@ let bot = linebot({
 bot.on('message', function(event) {
     if (event.message.type = 'text') {
       var msg = event.message.text;
-      if (msg = '貼圖') {
+      var replyMsg = '';
+      if (replyMsg = '貼圖') {
         console.log('我正在努力製作中');
     }
       event.reply(msg).then(function(data) {
