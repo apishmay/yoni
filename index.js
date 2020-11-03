@@ -33,7 +33,7 @@ let bot = linebot({
         var msg = event.message.text;
         var replyMsg = '';
         if (msg == '貼圖') {
-            replyMsg = '努力中';  
+          console.log("努力中");  
         }
   
         event.reply(replyMsg).then(function(data) {
