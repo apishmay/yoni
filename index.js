@@ -13,24 +13,36 @@ let bot = linebot({
 //     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
 //     event.reply(`你說了 ${event.message.text}`);
 // });
-bot.on('message', function(event) {
-    if (event.message.type = 'text') {
-      var msg = event.message.text;
-      var replyMsg = '';
-      if (replyMsg = '貼圖') {
-        console.log('我正在努力製作中');
-    }
-      event.reply(msg).then(function(data) {
-        // success 
-        console.log(msg);
-      })
-      .catch(function(error) {
-        // error 
-        console.log('error');
-      });
-    }
-  });
-
+// bot.on('message', function(event) {
+//     if (event.message.type = 'text') {
+//       var msg = event.message.text;
+//     }
+//       event.reply(msg).then(function(data) {
+//         // success 
+//         console.log(msg);
+//       })
+//       .catch(function(error) {
+//         // error 
+//         console.log('error');
+//       });
+//     }
+//   });
+  function _bot() {
+    bot.on('message', function(event) {
+      if (event.message.type == 'text') {
+        var msg = event.message.text;
+        var replyMsg = '';
+        if (msg == '貼圖') {
+            replyMsg = '努力中';  
+        }
+  
+        event.reply(replyMsg).then(function(data) {
+          console.log(replyMsg);
+        }).catch(function(error) {
+          console.log('error');
+        });
+      }
+    });
 // Bot 所監聽的 webhook 路徑與 port，heroku 會動態存取 port 所以不能用固定的 port，沒有的話用預設的 port 5000
 bot.listen('/', process.env.PORT || 5000, function () {
     console.log('機器人上線啦！');
