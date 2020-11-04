@@ -28,6 +28,7 @@ bot.on('message', function (event) {
 //       });
 //     }
 //   });
+
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
     //     var msg = event.message.text;
