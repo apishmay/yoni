@@ -29,7 +29,7 @@ bot.on('message', function(event) {
       });    
   });
 
-setTimeout(bot.push('3秒的內容',3000 );   
+setTimeout(console.log('3秒的內容',3000 );   
   setTimeout(function(){
     var userId = '使用者 ID';
     var sendMsg = '要發送的文字';
