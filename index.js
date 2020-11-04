@@ -32,7 +32,7 @@ bot.on('message', function(event) {
 
 setTimeout("changeState()",3000 );  
 function changeState(){  
-    console.log('3秒的內容'); 
+    bot.push('3秒的內容'); 
 }  
   setTimeout(function(){
     var userId = '使用者 ID';
