@@ -22,12 +22,7 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         console.log(msg);
-        setTimeout(function(){
-          var userId = '使用者 ID';
-          var sendMsg = '要發送的文字';
-          bot.push(userId,sendMsg);
-          console.log('send: '+sendMsg);
-          },5000);
+        changeState()
       })
       .catch(function(error) {
         // error 
@@ -35,6 +30,16 @@ bot.on('message', function(event) {
       });    
   });
 
+setTimeout("changeState()",3000 );  
+function changeState(){  
+    console.log('3秒的內容'); 
+}  
+  setTimeout(function(){
+    var userId = '使用者 ID';
+    var sendMsg = '要發送的文字';
+    bot.push(userId,sendMsg);
+    console.log('send: '+sendMsg);
+    },5000);
 
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
