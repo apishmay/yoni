@@ -15,7 +15,7 @@ bot.on('message', function (event) {
     event.reply(`你說了 ${event.message.text}`);   
 });
 setTimeout(function(){
-      console.log('測試五秒');
+    bot.push('測試五秒');
     },5000);
 // bot.on('message', function(event) {
 //     if (event.message.type = 'text') {
