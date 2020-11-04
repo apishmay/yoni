@@ -33,7 +33,13 @@ let bot = linebot({
         var replyMsg = '';
         if (msg == '貼圖') {
           replyMsg = "努力中";  
-        }else{
+        }
+
+        else if(msg == '高明'){
+          replyMsg = "https://www.km101.com.tw/"
+        }
+        
+        else{
           replyMsg = msg ;
         }
         event.reply(replyMsg).then(function(data) {
