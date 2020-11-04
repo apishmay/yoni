@@ -14,6 +14,13 @@ bot.on('message', function (event) {
     event.reply(`你說了 ${event.message.text}`);
 });
 
+setTimeout(function(){
+  var userId = '使用者 ID';
+  var sendMsg = '要發送的文字';
+  bot.push(userId,sendMsg);
+  console.log('send: '+sendMsg);
+},5000);
+
 // bot.on('message', function(event) {
 //     if (event.message.type = 'text') {
 //       var msg = event.message.text;
