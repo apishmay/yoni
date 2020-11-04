@@ -12,13 +12,11 @@ let bot = linebot({
 // 當有人傳送訊息給 Bot 時
 bot.on('message', function (event) {
     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
-    event.reply(`你說了 ${event.message.text}`);
-    
-    setTimeout(function(){
+    event.reply(`你說了 ${event.message.text}`);   
+});
+setTimeout(function(){
       console.log('測試五秒');
     },5000);
-});
-
 // bot.on('message', function(event) {
 //     if (event.message.type = 'text') {
 //       var msg = event.message.text;
