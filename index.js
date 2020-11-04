@@ -8,6 +8,8 @@ let bot = linebot({
     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
 });
 
+_japan();
+
 // 當有人傳送訊息給 Bot 時
 // bot.on('message', function (event) {
 //     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
@@ -36,9 +38,13 @@ let bot = linebot({
         }
 
         else if(msg == '高明'){
-          replyMsg = "https://www.km101.com.tw/"
+          replyMsg = "https://www.km101.com.tw/" ;
         }
         
+        else if(msg == '請問日幣現在多少'){
+          replyMsg = _japan() ;
+        }
+
         else{
           replyMsg = msg ;
         }
