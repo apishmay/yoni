@@ -10,31 +10,32 @@ let bot = linebot({
 
 
 // 當有人傳送訊息給 Bot 時
-bot.on('message', function (event) {
-    // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
-    event.reply(`${event.message.text}`);   
-});
+// bot.on('message', function (event) {
+//     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
+//     event.reply(`${event.message.text}`);   
+// });
 
-// bot.on('message', function(event) {
-//     if (event.message.type = 'text') {
-//       var msg = event.message.text;
-//     }
-//       event.reply(msg).then(function(data) {
-//         // success 
-//         console.log(msg);
-//       })
-//       .catch(function(error) {
-//         // error 
-//         console.log('error');
-//       });    
-//   });
+bot.on('message', function(event) {
+    if (event.message.type = 'text') {
+      var msg = event.message.text;
+    }
+      event.reply(msg).then(function(data) {
+        // success 
+        console.log(msg);
+        setTimeout(function(){
+          var userId = '使用者 ID';
+          var sendMsg = '要發送的文字';
+          bot.push(userId,sendMsg);
+          console.log('send: '+sendMsg);
+          },5000);
+      })
+      .catch(function(error) {
+        // error 
+        console.log('error');
+      });    
+  });
 
-setTimeout(function(){
-    var userId = '使用者 ID';
-    var sendMsg = '要發送的文字';
-    bot.push(userId,sendMsg);
-    console.log('send: '+sendMsg);
-},5000);
+
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
     //     var msg = event.message.text;
