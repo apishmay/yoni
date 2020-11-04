@@ -22,7 +22,6 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         console.log(msg);
-        changeState()
       })
       .catch(function(error) {
         // error 
@@ -30,10 +29,7 @@ bot.on('message', function(event) {
       });    
   });
 
-setTimeout("changeState()",3000 );  
-function changeState(){  
-    bot.push('3秒的內容'); 
-}  
+setTimeout(bot.push('3秒的內容',3000 );   
   setTimeout(function(){
     var userId = '使用者 ID';
     var sendMsg = '要發送的文字';
