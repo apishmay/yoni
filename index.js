@@ -22,7 +22,7 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         console.log(msg);
-        console.log(countSecond());
+        countSecond();
       })
       .catch(function(error) {
         // error 
@@ -40,7 +40,7 @@ setTimeout(function(){
 function countSecond() 
 {　 
   setTimeout("countSecond()", 1000);
-  console.log('測試');
+  bot.push('測試');
 }
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
