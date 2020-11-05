@@ -40,7 +40,8 @@ setTimeout(function(){
 function countSecond() 
 {　 
   setTimeout("countSecond()", 1000);
-  bot.push('測試');
+  var sendMsg = '要發送的文字';
+  bot.push(sendMsg);
 }
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
