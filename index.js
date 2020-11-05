@@ -32,7 +32,7 @@ bot.on('message', function(event) {
   setTimeout(
     bot.on('message', function (event) {
           // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
-          console.log('測試');
+          event.reply(`${event.message.text}`);
       })
   ,5000);
 
