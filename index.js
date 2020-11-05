@@ -15,10 +15,23 @@ let bot = linebot({
 //     event.reply(`${event.message.text}`);   
 // });
 
-bot.on('message', function(event) {
-    if (event.message.type = 'text') {
-      var msg = event.message.text;
-    }
+// bot.on('message', function(event) {
+//     if (event.message.type = 'text') {
+//       var msg = event.message.text;
+//     }
+//       event.reply(msg).then(function(data) {
+//         // success 
+//         console.log(msg);
+//       })
+//       .catch(function(error) {
+//         // error 
+//         console.log('error');
+//       });
+//   });
+
+  bot.on('message', function(event) { 
+    var msg =""
+    setTimeout(msg = "test",5000);
       event.reply(msg).then(function(data) {
         // success 
         console.log(msg);
@@ -29,12 +42,7 @@ bot.on('message', function(event) {
       });
   });
 
-  setTimeout(
-    bot.on('message', function (event) {
-          // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
-          event.reply(`${event.message.text}`);
-      })
-  ,5000);
+  
 
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
