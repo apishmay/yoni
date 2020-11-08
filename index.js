@@ -14,13 +14,6 @@ let bot = linebot({
 //     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
 //     event.reply(`${event.message.text}`);   
 // });
-setTimeout(function(){
-  var userId = 'apishmay';
-  var sendMsg = '測試';
-  bot.push(userId,sendMsg);
-  console.log('send: '+sendMsg);
-},5000);
-
 bot.on('message', function(event) {
     if (event.message.type = 'text') {
       var msg = event.message.text;
@@ -34,6 +27,13 @@ bot.on('message', function(event) {
         console.log('error');
       });
   });
+
+setTimeout(function(){
+  var userId = '{ev.Source.UserId}';
+  var sendMsg = '測試';
+  bot.push(userId,sendMsg);
+  console.log('send: '+sendMsg);
+},5000);
 
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
