@@ -8,6 +8,8 @@ let bot = linebot({
     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
 });
 
+var userProfiles = await _messagingClient
+    .GetGroupMemberProfilesAsync(ev.Source.Id);
 
 // 當有人傳送訊息給 Bot 時
 // bot.on('message', function (event) {
@@ -29,7 +31,7 @@ bot.on('message', function(event) {
   });
 
 setTimeout(function(){
-  var userId = 'apishmay';
+  var userId = userProfiles;
   var sendMsg = '測試';
   bot.push(userId,sendMsg);
   console.log('send: '+sendMsg);
