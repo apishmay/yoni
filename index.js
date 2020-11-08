@@ -8,9 +8,6 @@ let bot = linebot({
     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
 });
 
-var userProfiles = await _messagingClient
-    .GetGroupMemberProfilesAsync(ev.Source.Id);
-
 // 當有人傳送訊息給 Bot 時
 // bot.on('message', function (event) {
 //     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
@@ -31,7 +28,7 @@ bot.on('message', function(event) {
   });
 
 setTimeout(function(){
-  var userId = userProfiles;
+  var userId = ev.Source.Id;
   var sendMsg = '測試';
   bot.push(userId,sendMsg);
   console.log('send: '+sendMsg);
