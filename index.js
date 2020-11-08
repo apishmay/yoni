@@ -28,7 +28,7 @@ bot.on('message', function(event) {
   });
 
 setTimeout(function(){
-  var userId = ev.Source.Id;
+  var userId = 'apishmay@gmail.com';
   var sendMsg = '測試';
   bot.push(userId,sendMsg);
   console.log('send: '+sendMsg);
