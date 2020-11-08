@@ -14,24 +14,17 @@ let bot = linebot({
 //     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
 //     event.reply(`${event.message.text}`);   
 // });
+setTimeout(function(){
+  var userId = 'apishmay';
+  var sendMsg = '測試';
+  bot.push(userId,sendMsg);
+  console.log('send: '+sendMsg);
+},5000);
 
-// bot.on('message', function(event) {
-//     if (event.message.type = 'text') {
-//       var msg = event.message.text;
-//     }
-//       event.reply(msg).then(function(data) {
-//         // success 
-//         console.log(msg);
-//       })
-//       .catch(function(error) {
-//         // error 
-//         console.log('error');
-//       });
-//   });
-
-  bot.on('message', function(event) { 
-    var msg =""
-    setTimeout(msg = "test",5000);
+bot.on('message', function(event) {
+    if (event.message.type = 'text') {
+      var msg = event.message.text;
+    }
       event.reply(msg).then(function(data) {
         // success 
         console.log(msg);
@@ -41,8 +34,6 @@ let bot = linebot({
         console.log('error');
       });
   });
-
-  
 
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
