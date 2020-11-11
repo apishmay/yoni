@@ -30,31 +30,13 @@ bot.on('message', function(event) {
     });
     function timetest(){
       setTimeout(function(){
-      // var userId = 'bc37e0cc';
-      // var sendMsg = '測試';
-      // bot.push(userId,sendMsg);
-      // console.log('send: '+sendMsg);
-      client.pushMessage('<to>', message)
-      .then(() => {
-        console.log('測試');
-      })
-      .catch((err) => {
-        // error handling
-      });
+      var userId = 'apishmay';
+      var sendMsg = '測試';
+      bot.push(userId,sendMsg);
+      console.log('send: '+sendMsg);
     },5000);
     }
-    const line = require('@line/bot-sdk');
 
-    const client = new line.Client({
-      channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
-    });
-    
-    const message = {
-      type: 'text',
-      text: 'Hello World!'
-    };
-    
-    
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
     //     var msg = event.message.text;
