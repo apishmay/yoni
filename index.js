@@ -30,7 +30,7 @@ bot.on('message', function(event) {
     });
     function timetest(){
       setTimeout(function(){
-      var userId = 'apishmay';
+      var userId = '@apishmay';
       var sendMsg = '測試';
       bot.push(userId,sendMsg);
       console.log('send: '+sendMsg);
