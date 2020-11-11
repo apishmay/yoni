@@ -25,14 +25,15 @@ bot.on('message', function(event) {
         // error 
         console.log('error');
       });
-  });
+      setTimeout(function(){
+      var userId = 'apishmay';
+      var sendMsg = '測試';
+      bot.push(userId,sendMsg);
+      console.log('send: '+sendMsg);
+    },5000);
+    });
 
-setTimeout(function(){
-  var userId = 'apishmay';
-  var sendMsg = '測試';
-  bot.push(userId,sendMsg);
-  console.log('send: '+sendMsg);
-},5000);
+
 
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
