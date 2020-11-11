@@ -44,7 +44,40 @@ bot.on('message', function(event) {
         sendTextMessage(data.from, data.text);
       }
     });
+    function sendTextMessage(sender, text) {
 
+      const data = {
+        to: [sender],
+        toChannel: 1383378250,
+        eventType: '138311608800106203',
+        content: {
+          contentType: 1,
+          toType: 1,
+          text: text
+        }
+      };
+    
+      console.log('send: ', data);
+    
+      request({
+        url: LINE_API,
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+          'X-Line-ChannelID': CHANNEL_ID,
+          'X-Line-ChannelSecret': CHANNEL_SERECT,
+          'X-Line-Trusted-User-With-ACL': MID
+        },
+        method: 'POST',
+        body: JSON.stringify(data) 
+      }, function(error, response, body) {
+        if (error) {
+          console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+          console.log('Error: ', response.body.error);
+        }
+        console.log('send response: ', body);
+      });
+    }
 
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
