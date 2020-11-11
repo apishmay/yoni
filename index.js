@@ -36,7 +36,14 @@ bot.on('message', function(event) {
       console.log('send: '+sendMsg);
     },5000);
     }
-
+    app.post('/callback', (req, res) => {
+      const result = req.body.result;
+      for(let i=0; i<result.length; i++){
+        const data = result[i]['content'];
+        console.log('receive: ', data);
+        sendTextMessage(data.from, data.text);
+      }
+    });
 
 
     // bot.on('message', function(event) {
