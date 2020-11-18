@@ -20,7 +20,13 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         // console.log(msg);
-        timetest();
+        setTimeout(function(){
+          bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
+            type: 'text',
+            text: '這是測試!'
+          },
+        ]);
+      },5000);
       })
       .catch(function(error) {
         // error 
@@ -55,15 +61,15 @@ bot.on('message', function(event) {
   
 
 
-    function timetest(){
-      setTimeout(function(){
-        bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
-          type: 'text',
-          text: '這是測試!'
-        },
-      ]);
-    },5000);
-    }
+    // function timetest(){
+    //   setTimeout(function(){
+    //     bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
+    //       type: 'text',
+    //       text: '這是測試!'
+    //     },
+    //   ]);
+    // },5000);
+    // }
 
     // bot.on('message', function(event) {
     //   if (event.message.type == 'text') {
