@@ -20,7 +20,7 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         // console.log(msg);
-        console.log(getGroupMemberProfile);
+        console.log(profile());
 
         // timetest();
       })
