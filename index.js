@@ -8,9 +8,6 @@ let bot = linebot({
     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
 });
 
-UserInfo = isRock.LineBot.Utility.GetGroupMemberProfile(
-                    item.source.groupId, item.source.userId, ChannelAccessToken);
-
 // 當有人傳送訊息給 Bot 時
 // bot.on('message', function (event) {
 //     // 回覆訊息給使用者 (一問一答所以是回覆不是推送)
@@ -39,7 +36,7 @@ bot.on('message', function(event) {
       channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
     });
     
-    client.getGroupMemberProfile('<groupId>', '<userId>')
+    UserInfo =   client.getGroupMemberProfile('<groupId>', '<userId>')
   .then((profile) => {
     console.log(profile.displayName);
     console.log(profile.userId);
