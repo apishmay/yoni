@@ -20,7 +20,6 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         // console.log(msg);
-        console.log("你是" + client.getGroupMemberProfile.profile.userId);
         // timetest();
       })
       .catch(function(error) {
@@ -30,23 +29,29 @@ bot.on('message', function(event) {
       
     });
 
-    const line = require('@line/bot-sdk');
-
-    const client = new line.Client({
-      channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
-    });
+  bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
+      type: 'text',
+      text: '零食櫃被打開了!'
+    },
+  ]);
     
-  client.getGroupMemberProfile('<groupId>', '<userId>')
-  .then((profile) => {
-    console.log(profile.displayName);
-    console.log(profile.userId);
-    console.log(profile.pictureUrl);
-    console.log(profile.statusMessage);
-  })
-  .catch((err) => {
-    // error handling
-    console.log('error');
-  });
+  //   const line = require('@line/bot-sdk');
+
+  //   const client = new line.Client({
+  //     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
+  //   });
+    
+  // client.getGroupMemberProfile('<groupId>', '<userId>')
+  // .then((profile) => {
+  //   console.log(profile.displayName);
+  //   console.log(profile.userId);
+  //   console.log(profile.pictureUrl);
+  //   console.log(profile.statusMessage);
+  // })
+  // .catch((err) => {
+  //   // error handling
+  //   console.log('error');
+  // });
   
 
 
