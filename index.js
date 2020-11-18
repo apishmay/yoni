@@ -20,7 +20,7 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         // console.log(msg);
-        console.log("你是" + UserInfo.displayName);
+        console.log("你是" + UserInfo.profile.userId);
         // timetest();
       })
       .catch(function(error) {
