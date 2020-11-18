@@ -20,9 +20,19 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         // console.log(msg);
-        console.log(profile());
-
         // timetest();
+        client.getGroupMemberProfile('<groupId>', '<userId>')
+  .then((profile) => {
+    console.log(profile.displayName);
+    console.log(profile.userId);
+    console.log(profile.pictureUrl);
+    console.log(profile.statusMessage);
+  })
+  .catch((err) => {
+    // error handling
+    console.log('error');
+  });
+  
       })
       .catch(function(error) {
         // error 
