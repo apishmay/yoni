@@ -20,13 +20,7 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         // console.log(msg);
-        setTimeout(function(){
-          bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
-            type: 'text',
-            text: '這是測試!'
-          },
-        ]);
-      },5000);
+        // timetest();
       })
       .catch(function(error) {
         // error 
@@ -35,12 +29,14 @@ bot.on('message', function(event) {
       
     });
 
-  // bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
-  //     type: 'text',
-  //     text: '這是測試!'
-  //   },
-  // ]);
-    
+  
+  setTimeout(function(){
+    bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
+      type: 'text',
+      text: '這是測試!'
+    },
+  ]);
+    },5000);
   //   const line = require('@line/bot-sdk');
 
   //   const client = new line.Client({
@@ -63,11 +59,10 @@ bot.on('message', function(event) {
 
     // function timetest(){
     //   setTimeout(function(){
-    //     bot.push('Uc8ae0ad12f3c9af4821652761f8a4abc', [{
-    //       type: 'text',
-    //       text: '這是測試!'
-    //     },
-    //   ]);
+    //   var userId = '@apishmay@gmail.com';
+    //   var sendMsg = '測試';
+    //   bot.push(userId,sendMsg);
+    //   console.log('send: '+sendMsg);
     // },5000);
     // }
 
