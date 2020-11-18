@@ -19,7 +19,9 @@ bot.on('message', function(event) {
     }
       event.reply(msg).then(function(data) {
         // success 
-        console.log(msg);
+        // console.log(msg);
+        console.log(getGroupMemberProfile);
+
         // timetest();
       })
       .catch(function(error) {
@@ -29,22 +31,24 @@ bot.on('message', function(event) {
       
     });
 
-  //   const line = require('@line/bot-sdk');
+    const line = require('@line/bot-sdk');
 
-  //   const client = new line.Client({
-  //     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
-  //   });
+    const client = new line.Client({
+      channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
+    });
     
-  //   client.getGroupMemberProfile('<groupId>', '<userId>')
-  // .then((profile) => {
-  //   console.log(profile.displayName);
-  //   console.log(profile.userId);
-  //   console.log(profile.pictureUrl);
-  //   console.log(profile.statusMessage);
-  // })
-  // .catch((err) => {
-  //   // error handling
-  // });
+    client.getGroupMemberProfile('<groupId>', '<userId>')
+  .then((profile) => {
+    console.log(profile.displayName);
+    console.log(profile.userId);
+    console.log(profile.pictureUrl);
+    console.log(profile.statusMessage);
+  })
+  .catch((err) => {
+    // error handling
+    console.log('error');
+  });
+  
 
 
     // function timetest(){
