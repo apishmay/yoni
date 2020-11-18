@@ -20,7 +20,7 @@ bot.on('message', function(event) {
       event.reply(msg).then(function(data) {
         // success 
         // console.log(msg);
-        console.log("你是" + UserInfo.profile.userId);
+        console.log("你是" + client.getGroupMemberProfile.profile.userId);
         // timetest();
       })
       .catch(function(error) {
@@ -36,7 +36,7 @@ bot.on('message', function(event) {
       channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
     });
     
-    UserInfo =   client.getGroupMemberProfile('<groupId>', '<userId>')
+  client.getGroupMemberProfile('<groupId>', '<userId>')
   .then((profile) => {
     console.log(profile.displayName);
     console.log(profile.userId);
