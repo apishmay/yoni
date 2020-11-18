@@ -29,22 +29,22 @@ bot.on('message', function(event) {
       
     });
 
-    const line = require('@line/bot-sdk');
+  //   const line = require('@line/bot-sdk');
 
-    const client = new line.Client({
-      channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
-    });
+  //   const client = new line.Client({
+  //     channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN
+  //   });
     
-    client.getProfile('<userId>')
-      .then((profile) => {
-        console.log(profile.displayName);
-        console.log(profile.userId);
-        console.log(profile.pictureUrl);
-        console.log(profile.statusMessage);
-      })
-      .catch((err) => {
-        // error handling
-      });
+  //   client.getGroupMemberProfile('<groupId>', '<userId>')
+  // .then((profile) => {
+  //   console.log(profile.displayName);
+  //   console.log(profile.userId);
+  //   console.log(profile.pictureUrl);
+  //   console.log(profile.statusMessage);
+  // })
+  // .catch((err) => {
+  //   // error handling
+  // });
 
 
     // function timetest(){
